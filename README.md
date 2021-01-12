@@ -36,3 +36,8 @@ Use `develop` branch for the final test of your code.
 2. Import you component to the `src/config.js` for the local development
 3. Add the new script to the `package.json` to run development mode for your component - `REACT_APP_COMPONENT=EXAMPLE react-scripts start`. Look at example component to see how it works.
 4. Add new script to the README.md file.
+
+### Managing components initial props
+1. Go to the `src/config.js`
+2. Change or add the new props to `initialProps` variable (for your component). 
+

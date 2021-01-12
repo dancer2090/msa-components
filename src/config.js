@@ -1,10 +1,10 @@
 import { Chat, Example } from './lib';
 
-export const ACTIVE_COMPONENT = process.env.REACT_APP_COMPONENT;
+const ACTIVE_COMPONENT = process.env.REACT_APP_COMPONENT;
 
 // REACT_APP_COMPONENT keys
-export const CHAT = 'CHAT';
-export const EXAMPLE = 'EXAMPLE';
+const CHAT = 'CHAT';
+const EXAMPLE = 'EXAMPLE';
 
 // join new component here
 const components = {
@@ -12,6 +12,7 @@ const components = {
   [EXAMPLE]: Example,
 }
 
+// set initial props for the your component
 const initialProps = {
   [CHAT]: {
     portal: 'admin', // admin, nurse

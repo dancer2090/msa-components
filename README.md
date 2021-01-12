@@ -1,12 +1,12 @@
-# Getting Started with Create React App
+# MSA Components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MSA Components provided as package based on create-react-app
 
-## Available Scripts
+## Development
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -22,49 +22,16 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For the build uses olny the components from `src/lib` folder.
+All of the code we need to use should be there.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Development strategy
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Pushing to the `master` branch deploy components to the MSA portals. 
+Use `develop` branch for the final test of your code.
 
-### `yarn eject`
+### How to add features/fixes
+Create another branch from master. ( follow names featute/branchmane or fix/branchname)
+Create PR to the `develop` branch. Assign someone to check it.
+After approvement code merges to `develop` branch and after the final test - to `master` branch.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

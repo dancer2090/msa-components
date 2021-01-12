@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Chat from './lib/Chat';
+import { getInitialProps, getComponent } from './config';
 
-const CHAT = 'chat';
-const component = CHAT;
+const baseProps = getInitialProps();
+const Component = getComponent();
 
 ReactDOM.render(
   <React.StrictMode>
-    {component === CHAT && <Chat/>}
+    <Component  {...baseProps} />
   </React.StrictMode>,
   document.getElementById('root')
 );

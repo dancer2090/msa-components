@@ -6,6 +6,10 @@ MSA Components provided as package based on create-react-app
 
 In the project directory, you can run:
 
+### `npm run start-chat`
+
+Runs the app in the development mode fir the chat component
+
 ### `npm run start`
 
 Runs the app in the development mode.\
@@ -31,7 +35,12 @@ Pushing to the `master` branch deploy components to the MSA portals.
 Use `develop` branch for the final test of your code.
 
 ### How to add features/fixes
-Create another branch from master. ( follow names featute/branchmane or fix/branchname)
-Create PR to the `develop` branch. Assign someone to check it.
-After approvement code merges to `develop` branch and after the final test - to `master` branch.
+1. Create another branch from master. ( follow names featute/branchmane or fix/branchname)
+2. Create PR to the `develop` branch. Assign someone to check it.
+3. After approvement code merges to `develop` branch and after the final test - to `master` branch.
 
+### How to add new components
+1. Create new react component inside `src/lib` directory. Make sure that you include it to the `src/lib/index.js`
+2. Import you component to the `src/config.js` for the local development
+3. Add the new script to the `package.json` to run development mode for your component - `REACT_APP_COMPONENT=EXAMPLE react-scripts start`. Look at example component to see how it works.
+4. Add new script to the README.md file.

@@ -10,7 +10,7 @@ const EXAMPLE = 'EXAMPLE';
 const components = {
   [CHAT]: Chat,
   [EXAMPLE]: Example,
-}
+};
 
 // set initial props for the your component
 const initialProps = {
@@ -18,7 +18,7 @@ const initialProps = {
     portal: 'admin', // admin, nurse
     mode: 'orange', // green, orange
     apiUrl: 'http://localhost:3001',
-    socketUrl: 'ws://localhost:3005', 
+    socketUrl: 'ws://localhost:3005',
   },
   [EXAMPLE]: {
 

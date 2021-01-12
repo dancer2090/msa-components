@@ -1,0 +1,29 @@
+{
+  "name": "msa-components",
+  "version": "1.0.0",
+  "description": "Repository for the MSA Technology shared components",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "babel src -d build",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msaprojections/MSATechnology-Components.git"
+  },
+  "author": "MSA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msaprojections/MSATechnology-Components/issues"
+  },
+  "homepage": "https://github.com/msaprojections/MSATechnology-Components#readme",
+  "dependencies": {
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}

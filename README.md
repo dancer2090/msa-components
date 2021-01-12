@@ -2,7 +2,7 @@
 
 MSA Components provided as package based on create-react-app
 
-## Intitialization
+## Initialization
 1. Add the following row to the dependencies in `package.json` to your react project.
 ```
     "msa-components": "https://github.com/dancer2090/msa-components#master"

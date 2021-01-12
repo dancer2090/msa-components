@@ -9,6 +9,13 @@ MSA Components provided as package based on create-react-app
 
 ```
 2. Run `npm i` cmd
+3. Add component to your project
+```
+    import { Chat } from 'msa-components';
+
+    <Chat portal={'nurse'} />
+
+```
 
 ## Development
 

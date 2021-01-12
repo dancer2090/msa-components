@@ -10,12 +10,12 @@ In the project directory, you can run:
 
 Runs the app in the development mode fir the chat component
 
-### `yarn test`
+### `npm run test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `npm run build`
 
 Builds the app for production to the `build` folder.\
 For the build uses olny the components from `src/lib` folder.

@@ -15,8 +15,8 @@ const components = {
 // set initial props for the your component
 const initialProps = {
   [CHAT]: {
-    portal: 'admin', // admin, nurse
-    mode: 'orange', // green, orange
+    portal: 'nurse', // admin, nurse
+    mode: 'green', // green, orange
     apiUrl: 'http://localhost:3001',
     socketUrl: 'ws://localhost:3005',
   },

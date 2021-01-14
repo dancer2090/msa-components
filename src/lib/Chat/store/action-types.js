@@ -1,0 +1,2 @@
+export const SET_CONFIGURATION = 'CHAT/SET_CONFIGURATION';
+export const SET_PAGE = 'CHAT/SET_PAGE';

@@ -1,9 +1,11 @@
 import React from 'react';
+import App from './components/App/App';
+import { StateProvider } from './store';
 
-const Chat = () => {
-  return (
-    <h1>Chat section here</h1>
-  );
-};
+const Chat = (props) => (
+  <StateProvider configuration={props}>
+    <App />
+  </StateProvider>
+);
 
 export default Chat;

@@ -10,6 +10,7 @@
     "url": "git+https://github.com/msaprojections/MSATechnology-Components.git"
   },
   "dependencies": {
+    "polished": "^4.0.5",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "styled-components": "^5.2.1"

@@ -2,8 +2,8 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const StyledButton = styled.button`
-  background: #52DE97;
-  border: 1px solid #52DE97;
+  background: ${props => props.theme.color.main};
+  border: 1px solid ${props => props.theme.color.main};
   border-radius: 29px;
   opacity: 1;
   min-height: 58px;
@@ -14,14 +14,12 @@ const StyledButton = styled.button`
   font-weight: 500;
   letter-spacing: 0px;
   color: #FFFFFF;
-  opacity: 1;
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   white-space: nowrap;
 
   ${(props) => props.hidden && css`

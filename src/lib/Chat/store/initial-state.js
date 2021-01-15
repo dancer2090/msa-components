@@ -1,5 +1,6 @@
 const initialState = {
   configuration: {
+    debug: false,
     init: false,
     portal: 'admin', // admin, nurse
     mode: 'orange', // green, orange

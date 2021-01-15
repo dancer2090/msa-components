@@ -1,7 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
 import App from './components/App/App';
 import configureStore from './module';
+import theme from './theme';
 
 // import { StateProvider } from './store';
 
@@ -13,9 +15,11 @@ import configureStore from './module';
 const store = configureStore();
 
 const Chat = (props) => (
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <ThemeProvider theme={theme[props.mode || 'orange']}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </ThemeProvider>
 );
 
 export default Chat;

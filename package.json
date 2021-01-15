@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "aws-amplify": "^3.3.14",
+    "polished": "^4.0.5",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "styled-components": "^5.2.1"
@@ -55,6 +56,8 @@
     "web-vitals": "^0.2.4"
   },
   "peerDependencies": {
+    "aws-amplify": "^3.3.14",
+    "polished": "^4.0.5",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "react": ">=16.8.0",

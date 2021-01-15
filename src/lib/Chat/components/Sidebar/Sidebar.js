@@ -1,8 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Container } from './styles';
-import Button from '../Button';
+import Button from '../common/Button';
 import store from '../../store';
+import Box from '../common/Box';
+import ChatListItem from '../common/ChatListItem';
 
 const Sidebar = () => {
 
@@ -11,12 +13,12 @@ const Sidebar = () => {
   const { portal = 'set the portal' } = useSelector(({ configuration }) => configuration);
 
   return(
-    <Container>
-      <div>
-        sidebar - {portal}
-        <Button mode="dark" >Example button</Button>
-      </div>
-    </Container>
+    <Box width="30%">
+      <ChatListItem />
+      <ChatListItem />
+      <ChatListItem />
+      <ChatListItem />
+    </Box>
   );
 };
 

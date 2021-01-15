@@ -1,10 +1,10 @@
 import { SET_CONFIGURATION } from './action-types';
 
-const setConfiguration = (config) => ({
+export const setConfiguration = (config) => ({
   type: SET_CONFIGURATION,
   payload: config,
 });
 
-export const initConfiguration = (props) => (dispatch, getState) => {
-  dispatch(setConfiguration(props));
-};
+// export const initConfiguration = (props) => {
+//   dispatch(setConfiguration(props));
+// };

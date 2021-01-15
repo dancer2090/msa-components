@@ -1,17 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Container } from './styles';
 import Button from '../Button';
 import store from '../../store';
 
 const Sidebar = () => {
 
-  const { state = {} } = useContext(store);
-  const { page, configuration } = state;
+  // const { state = {} } = useContext(store);
+  // const { page, configuration } = state;
+  const { portal = 'set the portal' } = useSelector(({ configuration }) => configuration);
 
   return(
     <Container>
       <div>
-        sidebar - {configuration && configuration.portal}
+        sidebar - {portal}
         <Button mode="dark" >Example button</Button>
       </div>
     </Container>

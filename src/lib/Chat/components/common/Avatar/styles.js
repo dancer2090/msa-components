@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
+import Icon from '../Icons';
 
 /* units */
 const sizeUnit = 16;
@@ -29,18 +30,30 @@ const Image = styled.img`
   height: auto;
 `;
 
+const UserName = styled.div`
+  font-weight: bold;
+  font-size: x-large;
+  color: white;
+  overflow: hidden;
+`;
+
 const Wrapper = styled.div`
+  flex-basis: ${props => size(props.size)};
   box-sizing: border-box;
   border-radius: 50%;
-  border: ${rem('2px')} solid #ddd;
-  padding: ${rem('2px')};
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  // border: ${rem('1px')} solid #ddd;
+  // padding: ${rem('1px')};
   width: ${props => size(props.size)};
   height: ${props => size(props.size)};
-  background-color: white;
+  background-color: ${props => props.theme.color.main};
 `;
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   Image,
+  UserName,
   Wrapper,
 };

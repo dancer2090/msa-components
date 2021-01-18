@@ -6,8 +6,18 @@ export const Container = styled.div`
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
+  background-color: ${props => props.theme.color.background.default};
 
-  ${props => props.debug && css`
-    border: 1px solid red;
-  `}
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    font-family: ${props => props.theme.font.fontFamily};
+  }
+
+  ${props =>
+    props.debug &&
+    css`
+      border: 1px solid red;
+    `}
 `;

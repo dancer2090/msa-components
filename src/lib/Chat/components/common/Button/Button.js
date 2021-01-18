@@ -1,12 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { lighten } from 'polished';
 
 const StyledButton = styled.button`
   background: ${props => props.theme.color.main};
   border: 1px solid ${props => props.theme.color.main};
-  border-radius: 29px;
+  border-radius: 28px;
   opacity: 1;
-  min-height: 58px;
+  min-height: 50px;
   padding: 0 49px;
   text-align: center;
   font-size: 20px;
@@ -27,9 +28,7 @@ const StyledButton = styled.button`
   `}
 
   &:hover {
-    background: #2E293C;
-    border: 1px solid #2E293C;
-    color: #52DE97;
+    background: ${props => lighten(0.03, props.theme.color.main)};;
   }
 
   ${(props) => props.mode === 'dark' && css`
@@ -37,7 +36,7 @@ const StyledButton = styled.button`
     &:hover {
       background: #FFFFFF;
       border: 1px solid #FFFFFF;
-      color: #52DE97;
+      color: ${props => props.theme.color.main};
     }
   `}
 
@@ -47,7 +46,7 @@ const StyledButton = styled.button`
     &:hover {
       background: #2E293C;
       border: 1px solid #2E293C;
-      color: #52DE97;
+      color: ${props => props.theme.color.main};
     }
   `}
   ${(props) => props.mode === 'transparent-light' && css`
@@ -56,15 +55,15 @@ const StyledButton = styled.button`
     &:hover {
       background: #FFFFFF;
       border: 1px solid #FFFFFF;
-      color: #52DE97;
+      color: ${props => props.theme.color.main};
     }
   `}
   ${(props) => props.mode === 'transparent-dark' && css`
     color: #FFFFFF;
     background: transparent;
     &:hover {
-      background: #52DE97;
-      border: 1px solid #52DE97;
+      background: ${props => props.theme.color.main};
+      border: 1px solid ${props => props.theme.color.main};
       color: #2E293C;
     }
   `}

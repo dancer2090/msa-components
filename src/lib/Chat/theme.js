@@ -11,9 +11,12 @@ const theme = {
       },
       background: {
         paper: '#FFFFFF',
-        default: '#F2F2F2',
+        default: '#f0f2f5',
       },
-    }
+    },
+    font: {
+      fontFamily: 'WorkSans, Source Sans Pro, Helvetica, sans-serif',
+    },
   },
   orange: {
     color: {
@@ -29,7 +32,7 @@ const theme = {
         paper: '#FFFFFF',
         default: '#F2F2F2',
       },
-    }
+    },
   },
 };
 

@@ -7,7 +7,7 @@ const Component = getComponent();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Component  {...baseProps} />
+    <Component {...baseProps} />
   </React.StrictMode>,
   document.getElementById('root')
 );

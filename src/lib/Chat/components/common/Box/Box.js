@@ -1,15 +1,25 @@
 import styled, { css } from 'styled-components';
 
 const Box = styled.div`
+  box-sizing: border-box;
   position: relative;
   padding: 8px;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
+  background-color: ${props => props.backgroundColor || 'white'};
 
   ${props => props.column && css`
     flex-direction: column;
+  `}
+  
+  ${props => props.nowrap && css`
+    flex-wrap: nowrap;
+  `}
+  
+  ${props => props.bordered && css`
+    border: 1px solid ${props.borderColor || props.theme.color.main};
   `}
   
   ${props => props.bordered && css`

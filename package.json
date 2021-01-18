@@ -13,6 +13,7 @@
     "aws-amplify": "^3.3.14",
     "polished": "^4.0.5",
     "react-redux": "^7.2.2",
+    "react-use-websocket": "^2.2.0",
     "redux": "^4.0.5",
     "styled-components": "^5.2.1"
   },

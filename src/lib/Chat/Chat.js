@@ -7,7 +7,7 @@ import theme from './theme';
 
 const store = configureStore();
 
-const Chat = (props) => (
+const Chat = props => (
   <ThemeProvider theme={theme[props.mode || 'orange']}>
     <Provider store={store}>
       <App configuration={props} />

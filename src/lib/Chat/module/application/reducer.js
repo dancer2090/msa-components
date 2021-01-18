@@ -1,8 +1,17 @@
-import { INIT_END, SET_CONNECTED, SET_DISCONNECTED } from './action-types';
+import {
+  INIT_END,
+  SET_CONNECTED,
+  SET_DISCONNECTED,
+  SET_ACTION,
+} from './action-types';
 
 const initialState = {
   isInit: true,
   isConnected: false,
+  action: {
+    type: 'MAIN', // ADD_CHAT, OPEN_CHAT
+    params: {}, // { chat_id: id }
+  },
 };
 
 const application = (state = initialState, action) => {
@@ -23,6 +32,12 @@ const application = (state = initialState, action) => {
       return {
         ...state,
         isConnected: false,
+      };
+
+    case SET_ACTION:
+      return {
+        ...state,
+        action: action.payload,
       };
 
     default:

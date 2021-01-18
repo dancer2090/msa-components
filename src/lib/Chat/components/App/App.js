@@ -6,6 +6,7 @@ import { API } from 'aws-amplify';
 import { getAPIConfig } from './config';
 import TopBar from '../TopBar';
 import Content from '../Content';
+import AddChat from '../AddChat';
 
 import { Container } from './styles';
 import Preloader from '../common/Preloader';
@@ -66,9 +67,10 @@ const App = ({ configuration }) => {
   return isInit ? (
     <Preloader />
   ) : (
-    <Container>
+    <Container id="chat">
       <TopBar />
       <Content />
+      <AddChat />
     </Container>
   );
 };

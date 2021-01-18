@@ -4,6 +4,8 @@ import Sidebar from '../Sidebar';
 import Chat from '../Chat';
 
 const Content = () => {
+
+
   return(
     <Container>
       <Sidebar />

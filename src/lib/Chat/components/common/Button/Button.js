@@ -23,6 +23,10 @@ const StyledButton = styled.button`
   justify-content: center;
   white-space: nowrap;
 
+  ${(props) => props.disabled && css`
+    opacity: 0.4;
+  `}
+
   ${(props) => props.hidden && css`
     display: none;
   `}

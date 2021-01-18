@@ -1,8 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Box from '../common/Box';
 import Button from '../common/Button';
+import { setAppAction } from '../../module/application/actions';
 
 const Container = styled(Box)`
   height: 70px;
@@ -28,10 +29,12 @@ const HeaderItem = styled.div`
     `}
 `;
 
-const SidebarHeader = props => {
-  const { onClick } = props;
+const SidebarHeader = () => {
 
-  const { portal = 'set the portal' } = useSelector(({ configuration }) => configuration);
+  const { action } = useSelector(({ application }) => application);
+  const dispatch = useDispatch();
+
+  const onClick = () => dispatch(setAppAction({ type: 'ADD_CHAT' }));
 
   return (
     <Container justify="space-between" align="center">

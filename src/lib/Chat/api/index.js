@@ -8,3 +8,11 @@ export const getChats = () => API.get('Chat', '/chat', {
     // limit: 10,
   },
 });
+
+export const createChat = (body) => API.post('Chat', '/chat', { body } );
+
+export const getUsers = ({ context }) => API.get('Chat', '/chat/users', {
+  queryStringParameters: {
+    context,
+  }
+});

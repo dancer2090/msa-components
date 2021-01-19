@@ -22,10 +22,6 @@ const Box = styled.div`
     border: 1px solid ${props.borderColor || props.theme.color.main};
   `}
   
-  ${props => props.bordered && css`
-    border: 1px solid ${props.borderColor || props.theme.color.main};
-  `}
-  
   ${props => props.width && css`
     width: ${props.width};
   `}
@@ -35,6 +31,10 @@ const Box = styled.div`
   
   ${props => props.gutter && css`
     margin: ${props.gutter};
+  `}
+  
+  ${props => props.padding && css`
+    padding: ${props.padding};
   `}
   
   ${props => props.justify && css`

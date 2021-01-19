@@ -11,7 +11,7 @@ export const BoxPreloader = () => {
 
 const Preloader = () => {
   return (
-    <Box align="center" justify="center">
+    <Box align="center" height="200px" justify="center">
       <img src={Loader} />
     </Box>
   );

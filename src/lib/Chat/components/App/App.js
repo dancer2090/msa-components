@@ -68,7 +68,7 @@ const App = ({ configuration }) => {
     <Preloader />
   ) : (
     <Container id="chat">
-      <TopBar />
+      {/*<TopBar />*/}
       <Content />
       <AddChat />
     </Container>

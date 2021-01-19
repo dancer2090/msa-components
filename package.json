@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "aws-amplify": "^3.3.14",
+    "dayjs": "^1.10.3",
+    "normalizr": "^3.6.1",
     "polished": "^4.0.5",
     "react-modal": "^3.12.1",
     "react-redux": "^7.2.2",

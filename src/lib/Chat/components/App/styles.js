@@ -15,6 +15,16 @@ export const Container = styled.div`
     font-family: ${props => props.theme.font.fontFamily};
   }
 
+  *::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .3);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+  
   ${props =>
     props.debug &&
     css`

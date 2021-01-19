@@ -23,7 +23,7 @@ const Sidebar = () => {
   return (
     <Box width="30%" height="100%">
       <SidebarHeader />
-      {chatsInit ? (
+      {/* {chatsInit ? (
         <Preloader />
       ) : (
         <ChatWrapper align="flex-start" column nowrap>
@@ -54,7 +54,7 @@ const Sidebar = () => {
             );
           })}
         </ChatWrapper>
-      )}
+      )} */}
     </Box>
   );
 };

@@ -6,7 +6,7 @@ export const getAPIConfig = ({ endpoint, getToken }) => {
         endpoint,
         custom_header: async () => {
           return {
-            Authorization: `Bearer ${getToken()}`
+            Authorization: `Bearer ${await getToken()}`
           };
         }
       },

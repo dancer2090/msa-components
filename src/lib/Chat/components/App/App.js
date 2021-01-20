@@ -17,7 +17,7 @@ const App = ({ configuration }) => {
   const dispatch = useDispatch();
   const { isInit } = useSelector(({ application }) => application);
 
-  const { readyState } = useWebSocket(`${configuration.socketUrl}?token=${configuration.token}`, {
+  const { readyState } = useWebSocket(`${configuration.socketUrl}?token=${configuration.getToken()}`, {
     onOpen: () => {
       console.info('socket connection opened');
       dispatch(actionConnected);
@@ -46,11 +46,11 @@ const App = ({ configuration }) => {
 
   useEffect(() => {
     dispatch(setConfiguration(configuration));
-    const { apiUrl, token } = configuration;
+    const { apiUrl, getToken } = configuration;
     API.configure(
       getAPIConfig({
         endpoint: apiUrl,
-        token,
+        getToken,
       })
     );
     setTimeout(() => dispatch(actionInitFinished), 2000);

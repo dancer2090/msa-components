@@ -13,8 +13,14 @@ export const Container = styled.div`
   *:after {
     box-sizing: border-box;
     font-family: ${props => props.theme.font.fontFamily};
+    font-size: 0.95rem;
+    
   }
-
+  
+  *:focus {
+    outline: 0;
+  }
+  
   *::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 8px;

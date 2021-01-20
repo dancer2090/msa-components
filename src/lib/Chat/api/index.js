@@ -16,3 +16,5 @@ export const getUsers = ({ context }) => API.get('Chat', '/chat/users', {
     context,
   }
 });
+
+export const createMessage = (chatId, body) => API.post('Chat', `/chat/${chatId}/message`, { body } );

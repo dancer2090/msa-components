@@ -5,14 +5,14 @@ import { LoaderBox } from './styles';
 
 export const BoxPreloader = () => {
   <LoaderBox align="center" justify="center">
-    <img src={Loader} />
+    <img src={Loader} alt="preloader" />
   </LoaderBox>;
 };
 
 const Preloader = () => {
   return (
     <Box align="center" height="200px" justify="center">
-      <img src={Loader} />
+      <img src={Loader} alt="preloader" />
     </Box>
   );
 };

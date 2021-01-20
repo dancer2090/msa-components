@@ -5,9 +5,15 @@ import Box from '../Box';
 export const Container = styled(Box)`
   height: 80px;
 
+  ${props => props.active && css`
+    border-left: 3px solid ${props => props.theme.color.active};
+    padding-left: 5px;
+    background-color: ${props => lighten(0.02, props.theme.color.background.default)};
+  `}
+
   &:hover {
     cursor: pointer;
-    background-color: ${props => lighten(0.02, props.theme.color.background.default)};
+    background-color: ${props => lighten(0.01, props.theme.color.background.default)};
   }
 `;
 

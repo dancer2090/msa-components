@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import Icon from '../Icons';
 
 /* units */
 const sizeUnit = 16;

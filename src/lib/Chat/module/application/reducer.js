@@ -1,15 +1,14 @@
-import {
-  INIT_END,
-  SET_CONNECTED,
-  SET_DISCONNECTED,
-  SET_ACTION,
-} from './action-types';
+import { INIT_END, SET_CONNECTED, SET_DISCONNECTED, SET_ACTION, SET_MAIN_WINDOW_ACTION } from './action-types';
 
 const initialState = {
   isInit: true,
   isConnected: false,
   action: {
     type: 'MAIN', // ADD_CHAT, OPEN_CHAT
+    params: {}, // { chat_id: id }
+  },
+  chatAction: {
+    type: 'INITIAL', // ADD_CHAT, OPEN_CHAT
     params: {}, // { chat_id: id }
   },
 };
@@ -38,6 +37,12 @@ const application = (state = initialState, action) => {
       return {
         ...state,
         action: action.payload,
+      };
+
+    case SET_MAIN_WINDOW_ACTION:
+      return {
+        ...state,
+        chatAction: action.payload,
       };
 
     default:

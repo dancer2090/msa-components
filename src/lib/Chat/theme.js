@@ -3,6 +3,7 @@ const theme = {
     color: {
       main: '#00D374',
       error: '#F04E4E',
+      active: '#40a9ff',
       text: {
         disabled: '#CCC',
         hint: '#AAA',
@@ -22,6 +23,7 @@ const theme = {
     color: {
       main: '#CA9232',
       error: '#F04E4E',
+      active: '#40a9ff',
       text: {
         disabled: '#CCC',
         hint: '#AAA',

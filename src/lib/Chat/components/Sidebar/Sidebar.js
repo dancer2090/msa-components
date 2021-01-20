@@ -7,12 +7,22 @@ import { getChats } from '../../module/chat/actions';
 import Preloader from '../common/Preloader';
 import Box from '../common/Box';
 import { ChatWrapper } from './styles';
+import { selectChat } from '../../module/application/actions';
 
 const Sidebar = () => {
   // const { state = {} } = useContext(store);
   // const { page, configuration } = state;
   // const { portal = 'set the portal' } = useSelector(({ configuration }) => configuration);
-  const { chatsInit, chats, entities } = useSelector(({ chat }) => chat);
+  const {
+    chatAction: {
+      params: { chatId: activeChatId },
+    },
+  } = useSelector(({ application }) => application);
+  const {
+    chatsInit,
+    chats: allChats,
+    entities: { chats, users, messages },
+  } = useSelector(({ chat }) => chat);
 
   const dispatch = useDispatch();
 
@@ -20,36 +30,52 @@ const Sidebar = () => {
     getChats()(dispatch);
   }, [dispatch]);
 
+  const onSelectChat = id => () => {
+    selectChat(id)(dispatch);
+  };
+
   return (
-    <Box width="30%" height="100%">
+    <Box width="30%" minWidth="400px" height="100%" backgroundColor="white">
       <SidebarHeader />
       {chatsInit ? (
         <Preloader />
       ) : (
         <ChatWrapper align="flex-start" column nowrap>
-          {chats.map((chatId, index) => {
-            const chat = entities.chats[chatId];
+          {allChats.map((chatId, index) => {
+            const chat = chats[chatId];
             const createdAt = dayjs(chat.createdAt);
-            const user = entities.users[chat.user];
-            const chatUser = chat.chat_users[0]?.user;
+            const user = users[chat.user];
+            const rmOwnerArr = chat.chat_users.filter(({ user: chatUserId }) => chatUserId !== chat.user); //userId deeply nested due Sequelize
+            const chatUser =
+              rmOwnerArr.length && rmOwnerArr[0].user ? users[rmOwnerArr[0].user] : null; //userId deeply nested
             const name = chatUser
-              ? `${chatUser.given_name.substr(0, 1).toUpperCase()}${chatUser.family_name.substr(0, 1).toUpperCase()}`
+              ? `${chatUser?.given_name?.substr(0, 1).toUpperCase()}${chatUser?.family_name
+                  ?.substr(0, 1)
+                  .toUpperCase()}`
               : '...';
-            const messages = chat.messages.map(messageId => entities.messages[messageId]);
-            const lastMessage = messages.length > 0 ? messages[0] : null;
-            const lastMessageUser = entities.users[lastMessage.user];
+            const chatMessages =
+              chat.messages && Array.isArray(chat.messages) ? chat.messages.map(messageId => messages[messageId]) : [];
+            const lastMessage = chatMessages.length > 0 ? chatMessages[0] : { description: 'no messages yet' };
+            const lastMessageUser = lastMessage ? users[lastMessage?.user] : null;
             return (
-              <ChatListItem key={`chat-${chatId}`}
+              <ChatListItem
+                onClick={onSelectChat(chatId)}
+                key={`chat-${chatId}`}
                 title={chat.name}
-                lastUser={`${
-                  lastMessage.user_id === user.id
-                    ? 'You: '
-                    : `${lastMessageUser.given_name} ${lastMessageUser.family_name}: `
-                }`}
-                lastMessage={lastMessage.description}
+                lastUser={
+                  lastMessageUser
+                    ? `${
+                        lastMessage?.user_id === user.id
+                          ? 'You: '
+                          : `${lastMessageUser?.given_name} ${lastMessageUser?.family_name}: `
+                      }`
+                    : ''
+                }
+                lastMessage={lastMessage?.description}
                 name={name}
                 type="user"
                 date={createdAt.isSame(dayjs(), 'day') ? createdAt.format('hh:mm a') : createdAt.format('M/D/YYYY')}
+                active={chatId === activeChatId}
               />
             );
           })}

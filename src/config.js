@@ -22,7 +22,8 @@ const initialProps = {
     mode: 'green', // green, orange
     apiUrl: 'http://localhost:3001',
     socketUrl: 'ws://localhost:3005',
-    getToken: () => token
+    getToken: () => token,
+    token,
   },
   [EXAMPLE]: {
 

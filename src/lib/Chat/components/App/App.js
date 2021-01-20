@@ -17,7 +17,11 @@ const App = ({ configuration }) => {
   const dispatch = useDispatch();
   const { isInit } = useSelector(({ application }) => application);
 
-  const { readyState } = useWebSocket(`${configuration.socketUrl}?token=${await configuration.getToken()}`, {
+  const getWebToken = async() => {
+    return await configuration.getToken();
+  };
+
+  const { readyState } = useWebSocket(`${configuration.socketUrl}?token=${async () => await getWebToken()}`, {
     onOpen: () => {
       console.info('socket connection opened');
       dispatch(actionConnected);

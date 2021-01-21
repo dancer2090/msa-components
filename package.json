@@ -24,6 +24,8 @@
   "scripts": {
     "start-example": "REACT_APP_COMPONENT=EXAMPLE react-scripts start",
     "start-chat": "REACT_APP_COMPONENT=CHAT react-scripts start",
+    "start-chat-1": "REACT_APP_COMPONENT=CHAT REACT_APP_ACTIVE_TOKEN=1 react-scripts start",
+    "start-chat-2": "REACT_APP_COMPONENT=CHAT REACT_APP_ACTIVE_TOKEN=2 react-scripts start",
     "test": "react-scripts test",
     "build": "rm -rf build && NODE_ENV=production babel src/lib --out-dir build --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "prepare": "npm run build"

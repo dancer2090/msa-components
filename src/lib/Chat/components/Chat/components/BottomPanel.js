@@ -23,7 +23,7 @@ const BottomPanel = ({ chatId }) => {
   };
 
   return (
-    <Box height="auto" backgroundColor="white" padding="32px" margin="0 0 0 2px">
+    <Box height="auto" width="auto" backgroundColor="white" padding="16px" margin="0 0 0 2px">
       <Form>
         <Box nowrap align="flex-start" justify="space-between">
           <TextArea placeholder="write a message here..." onChange={onChange} value={value} />

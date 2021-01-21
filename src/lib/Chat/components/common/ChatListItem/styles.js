@@ -53,10 +53,17 @@ export const SubTitleWrapper = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: inline-flex;
 `;
 
 export const SubTitle = styled.span`
+  display: inline-flex;
+  align-items: center;
   color: ${props => props.theme.color.text.secondary};
+  * {
+    padding: 0;
+    margin: 0;
+  }
 
   ${props => props.accent && css`
     color: ${props => props.theme.color.main};

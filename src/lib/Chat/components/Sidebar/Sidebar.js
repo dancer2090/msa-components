@@ -8,6 +8,8 @@ import Preloader from '../common/Preloader';
 import Box from '../common/Box';
 import { ChatWrapper } from './styles';
 import { selectChat } from '../../module/application/actions';
+import { getFirstLine } from '../../helpers/string-parse';
+import ReactHtmlParser from 'react-html-parser';
 
 const Sidebar = () => {
   // const { state = {} } = useContext(store);
@@ -43,8 +45,10 @@ const Sidebar = () => {
         <ChatWrapper align="flex-start" column nowrap>
           {allChats.map((chatId, index) => {
             const chat = chats[chatId];
-            const createdAt = dayjs(chat.createdAt);
+            if (!chat) return '';
+            const createdAt = dayjs(chat?.createdAt);
             const user = users[chat.user];
+            const isGroupChat = chat.chat_users.length > 2;
             const rmOwnerArr = chat.chat_users.filter(({ user: chatUserId }) => chatUserId !== chat.user); //userId deeply nested due Sequelize
             const chatUser =
               rmOwnerArr.length && rmOwnerArr[0].user ? users[rmOwnerArr[0].user] : null; //userId deeply nested
@@ -71,9 +75,10 @@ const Sidebar = () => {
                       }`
                     : ''
                 }
-                lastMessage={lastMessage?.description}
+                lastMessage={ReactHtmlParser(getFirstLine(lastMessage?.description))}
                 name={name}
-                type="user"
+                avatar={chatUser?.avatar}
+                type={isGroupChat ? 'group' : 'user'}
                 date={createdAt.isSame(dayjs(), 'day') ? createdAt.format('hh:mm a') : createdAt.format('M/D/YYYY')}
                 active={chatId === activeChatId}
               />

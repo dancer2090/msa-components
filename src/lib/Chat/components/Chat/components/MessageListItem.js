@@ -1,8 +1,11 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import Box from '../../common/Box';
 import { MessageBody, MessageDate, UserName } from './styles';
+import { replaceLineBreaks } from '../../../helpers/string-parse';
 
-const MessageListItem = ({ message = '...', isOwned = true, user , date = '...' }) => {
+const MessageListItem = ({ message = '...', isOwned = true, user, date = '...' }) => {
+
   return (
     <Box
       column
@@ -10,7 +13,7 @@ const MessageListItem = ({ message = '...', isOwned = true, user , date = '...' 
       height="auto"
       maxWidth="80%"
       backgroundColor="white"
-      gutter="8px 16px"
+      margin="8px 16px"
       padding="16px"
       borderRadius="10px"
       alignSelf={isOwned ? 'flex-end' : 'flex-start'}>
@@ -18,7 +21,7 @@ const MessageListItem = ({ message = '...', isOwned = true, user , date = '...' 
         <UserName>{user}</UserName>
         <MessageDate>{date}</MessageDate>
       </Box>
-      <MessageBody>{message}</MessageBody>
+      <MessageBody>{ReactHtmlParser(replaceLineBreaks(message))}</MessageBody>
     </Box>
   );
 };

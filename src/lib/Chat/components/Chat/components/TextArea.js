@@ -19,13 +19,13 @@ const TextArea = props => {
   }
 
   return (
-    <TextAreaInput
-      placeholder={props.placeholder}
-      value={props.value}
-      onChange={props.onChange}
-      ref={textAreaRef}
-      idealHeight={idealHeight.current + 'px'}
-    />
+      <TextAreaInput
+        placeholder={props.placeholder}
+        value={props.value}
+        onChange={props.onChange}
+        ref={textAreaRef}
+        idealHeight={idealHeight.current + 'px'}
+      />
   );
 };
 

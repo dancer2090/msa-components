@@ -85,7 +85,7 @@ const application = (state = initialState, action) => {
       };
 
     case CHAT_MESSAGE_RECEIVED:
-      console.info(`Websocket message`, action.payload);
+      console.info(`Websocket message`, JSON.parse(action.payload.data));
       const dataJson = action.payload.data || '{}';
       const data = JSON.parse(dataJson);
       const type = data?.type;
@@ -115,6 +115,7 @@ const application = (state = initialState, action) => {
             entities: {
               ...state.entities,
               chats: { ...state.entities.chats, ...newChatNormalized.entities.chats },
+              users: { ...state.entities.users, ...newChatNormalized.entities.users },
             },
           };
 
@@ -127,6 +128,9 @@ const application = (state = initialState, action) => {
           }
           const newMessageNormalized = normalize(body, messageSchema);
           const targetChat = { ...state.entities.chats[body.chat_id] };
+          if (!Object.keys(targetChat).length) {
+            return { ...state };
+          }
           targetChat.messages.unshift(newMessageNormalized.result);
           //add userId for replay message schema as from API
           newMessageNormalized.entities.messages[body.id].user = body.user_id;

@@ -5,14 +5,14 @@ import { lighten } from 'polished';
 const StyledButton = styled.button`
   background: ${props => props.theme.color.main};
   border: 1px solid ${props => props.theme.color.main};
-  border-radius: 28px;
+  border-radius: 5px;
   opacity: 1;
   min-height: 50px;
   padding: 0 20px;
   text-align: center;
-  font-size: 20px;
+  //font-size: 20px;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0px;
   color: #FFFFFF;
   cursor: pointer;

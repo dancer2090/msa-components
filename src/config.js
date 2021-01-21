@@ -26,7 +26,7 @@ const initialProps = {
     apiUrl: 'http://localhost:3001',
     socketUrl: 'ws://localhost:3005',
     getToken: () => token,
-    token: ACTIVE_TOKEN === 1 ? token1 : token2,
+    token: ACTIVE_TOKEN == 1 ? token1 : token2,
   },
   [EXAMPLE]: {
 

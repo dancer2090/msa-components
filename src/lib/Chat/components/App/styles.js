@@ -1,11 +1,15 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  position: relative;
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
   background-color: ${props => props.theme.color.background.default};
 
   *,

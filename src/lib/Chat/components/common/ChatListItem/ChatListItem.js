@@ -4,12 +4,12 @@ import Divider from '../Divider';
 import { Container, Date, InfoWrapper, SubTitle, SubTitleWrapper, Title, TitleWrapper } from './styles';
 
 const ChatListItem = props => {
-  const { title, lastUser, lastMessage, name, date, type, onClick, active } = props;
+  const { title, lastUser, lastMessage, name, date, type, onClick, active, avatar } = props;
 
   return (
     <>
       <Container align="center" onClick={onClick} active={active} padding="0 8px">
-        <Avatar username={name} type={type} />
+        <Avatar username={name} type={type} imageUrl={avatar} />
         <InfoWrapper debug>
           <TitleWrapper>
             <Title>{title}</Title>

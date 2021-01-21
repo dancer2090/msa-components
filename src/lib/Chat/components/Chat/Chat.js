@@ -16,13 +16,13 @@ const Chat = () => {
   console.info(`Active Chat id=${chatId}`);
 
   return (
-    <Box height="100vh" padding="0">
+    <Box padding="0">
       {route === 'INITIAL' ? (
-        <Box column justify="center" align="center">
+        <Box justify="center" align="center">
           Select a chat from list or press ADD CHAT to start a new one
         </Box>
       ) : route === 'CHAT' ? (
-        <Box column nowrap height="100%" gutter="0" padding="0" justify="space-between">
+        <Box column nowrap height="100%" gutter="0" justify="space-between">
           <MessageList chatId={chatId} />
           <BottomPanel chatId={chatId} />
         </Box>

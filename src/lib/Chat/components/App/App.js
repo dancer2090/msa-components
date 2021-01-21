@@ -18,8 +18,8 @@ const App = ({ configuration }) => {
   const { isInit } = useSelector(({ application }) => application);
 
   const { readyState } = useWebSocket(`${configuration.socketUrl}?token=${configuration.token}`, {
-    onOpen: () => {
-      console.info('socket connection opened');
+    onOpen: (e) => {
+      console.info('socket connection opened', e);
       dispatch(actionConnected);
     },
     onClosed: () => {

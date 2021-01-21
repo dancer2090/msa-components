@@ -14,21 +14,30 @@ const MessageList = ({ chatId }) => {
   console.info(`Selected chat`, chat);
 
   return (
-    <Box column nowrap scroll direction="column-reverse" padding="0 0 16px 0" >
-      {chat.messages.map(messageId => {
-        const message = messages[messageId];
-        const user = users[message.user];
+    <Box nowrap scroll direction="column-reverse" padding="32px 0 0 0">
+      {chat && Array.isArray(chat.messages) && chat.messages.length ? (
+        chat.messages.map(messageId => {
+          const message = messages[messageId];
+          const user = users[message.user];
+          const createdAt = dayjs(message.createdAt);
 
-        return (
-          <MessageListItem
-            key={`message-${messageId}`}
-            message={message.description}
-            date={dayjs(message.createdAt).format('hh:mma, MM/DD/YYYY')}
-            isOwned={chat.user === message.user}
-            user={`${user?.given_name} ${user?.family_name}`}
-          />
-        );
-      })}
+          return (
+            <MessageListItem
+              key={`message-${messageId}`}
+              message={message.description}
+              date={
+                createdAt.isSame(dayjs(), 'day') ? createdAt.format('hh:mm a') : createdAt.format('hh:mma, MM/DD/YYYY')
+              }
+              isOwned={chat.user === message.user}
+              user={`${user?.given_name} ${user?.family_name}`}
+            />
+          );
+        })
+      ) : (
+        <Box column justify="center" align="center">
+          No messages yet...
+        </Box>
+      )}
     </Box>
   );
 };
